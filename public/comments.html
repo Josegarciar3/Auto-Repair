@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Comments</title>
+</head>
+<body>
+    <header class="header">
+        <div class="contenido-barNav">
+
+            <a class="contenido-logo" href="./index.html">
+                <img class="logo-reyes" src="./img/fwdlogoreyes/LOGO REYES cmyk-01.png" alt="logo">
+            </a>
+
+            <nav class="contenedor-links">
+                <a class="links" href="./index.html#about-us">About us</a>
+                <a class="links" href="./index.html#services">Services</a>
+                <a class="links" href="./appointments.html">Appointments</a>
+                <a class="links" href="./comments.html">Comments</a>
+                <a class="links" href="./location.html">Location</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <div class="comment-form-container">
+
+        <h1 class="main-title-comment">Deja tu comentario.</h1>
+        <form id="commentForm">
+            <input type="text" id="name" placeholder="Name" required><br>
+            <textarea type="text" id="comment" placeholder="Comment" required> </textarea><br>
+            <div class="rating-container">
+                <label for="rating">Rating</label>
+                <div class="star-rating">
+                    <input type="radio" id="5-stars" name="rating" value="5"><label for="5-stars">&#9733;</label>
+                    <input type="radio" id="4-stars" name="rating" value="4"><label for="4-stars">&#9733;</label>
+                    <input type="radio" id="3-stars" name="rating" value="3"><label for="3-stars">&#9733;</label>
+                    <input type="radio" id="2-stars" name="rating" value="2"><label for="2-stars">&#9733;</label>
+                    <input type="radio" id="1-star" name="rating" value="1"><label for="1-star">&#9733;</label>
+        
+                </div>
+    
+            </div><br>
+    
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <h2 class="title-comments" >Comments</h2>
+    <div class="average-rating-container" id="comments"></div>
+
+    <footer class="footer">
+        <ul class="social_icon">
+          <li>
+            <a href=""><ion-icon name="logo-facebook"></ion-icon></a>
+          </li>
+    
+          <li>
+            <a href=""><ion-icon name="logo-instagram"></ion-icon></a>
+          </li>
+        </ul>
+        <ul class="menu">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./appointments.html">Appointments</a></li>
+          <li><a href="./index.html#services">Services</a></li>
+          <li><a href="./comments.html">Comments</a></li>
+        </ul>
+    
+        <ul class="contact">
+          <li class="item-footer"> Antonio Reyes</li>
+          <li class="item-footer"> 4084606104</li>
+          <li class="item-footer"> info@reyesrepair.com</li>
+          <li class="item-footer"> 1713 Angela St, San Jose, CA 95125</li>
+        </ul>
+    
+        <p>Made with <strong> love ♥️</strong> by <a href="www.goban.tech" target="_blank" >Goban</a></p>
+    </footer>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="./js/modernizr.js"></script>
+    <script src="./js/location.js"></script>
+    <script src="../server.js"></script>
+    <script src="./js/index.js"></script>
+    
+</body>
+</html>
