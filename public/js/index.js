@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             form.reset();
 
-            fetch('http://localhost:5555/send-message', {
+            fetch('/api/send-message', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
