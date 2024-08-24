@@ -53,38 +53,38 @@ app.get('/api-key', (req, res) => {
 });
 
 
-app.post('/send-message', (req, res) => {
+// app.post('/send-message', (req, res) => {
 
-    const { name, email, phone, date, time } = req.body;
+//     const { name, email, phone, date, time } = req.body;
 
-    const messageBody = `Hola ${name}, tu cita está confirmada para el ${date} a las ${time}. Gracias por elegir Reyes Auto Repair.`;
+//     const messageBody = `Hola ${name}, tu cita está confirmada para el ${date} a las ${time}. Gracias por elegir Reyes Auto Repair.`;
 
-    const numerosDestinatarios =  [`+1${phone}`, '+14086246276', '+14084606104']
+//     const numerosDestinatarios =  [`+1${phone}`, '+14086246276', '+14084606104']
 
-    //Funcion para enviar mensaje a cada numero
+//     //Funcion para enviar mensaje a cada numero
 
-    const sendMessages = () => {
-        const promises = numerosDestinatarios.map(numero =>{
-            return client.messages.create({
-                body: messageBody,
-                from: '+18445611302',
-                to: numero
-            });
-        });
-        return Promise.all(promises);
-    };
+//     const sendMessages = () => {
+//         const promises = numerosDestinatarios.map(numero =>{
+//             return client.messages.create({
+//                 body: messageBody,
+//                 from: '+18445611302',
+//                 to: numero
+//             });
+//         });
+//         return Promise.all(promises);
+//     };
 
-    sendMessages()
-        .then(messages=>{
-            messages.forEach(message => console.log(message.sid));
-            res.json({ success:true});
-        })
-        .catch(error => {
-            console.error(error);
-            res.status(500).json({success:false, error: 'Failed to Send Message'})
-        });
+//     sendMessages()
+//         .then(messages=>{
+//             messages.forEach(message => console.log(message.sid));
+//             res.json({ success:true});
+//         })
+//         .catch(error => {
+//             console.error(error);
+//             res.status(500).json({success:false, error: 'Failed to Send Message'})
+//         });
 
-});
+// });
 
 //Endpoint para obtener los comentarios
 app.get('/comments', async (req, res) => {
