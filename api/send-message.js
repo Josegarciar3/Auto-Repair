@@ -1,8 +1,8 @@
 import twilio from 'twilio';
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
 
 // Cargar las variables de entorno
-dotenv.config();
+// dotenv.config();
 
 const accountSid = process.env.ACCOUNT_SID_TWILIO;
 const authToken = process.env.AUTH_TOKEN_TWILIO;
@@ -37,7 +37,7 @@ export default async function handler(req, res) {
         messages.forEach(message => console.log(message.sid));
         res.json({ success: true });
     } catch (error) {
-        console.error(error);
+        console.error('Error sending message:', error);
         res.status(500).json({ success: false, error: 'Failed to send message' });
     }
 }

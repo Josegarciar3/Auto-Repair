@@ -1,6 +1,7 @@
 {
   "name": "reyes_auto_repair",
   "version": "1.0.0",
+  "type": "module",
   "description": "Shop Auto Repair",
   "main": "index.js",
   "scripts": {
