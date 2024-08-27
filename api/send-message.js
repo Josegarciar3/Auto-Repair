@@ -6,15 +6,20 @@ dotenv.config();
 
 const accountSid = process.env.ACCOUNT_SID_TWILIO;
 const authToken = process.env.AUTH_TOKEN_TWILIO;
+console.log('Twilio Account SID:', accountSid);
+console.log('Twilio Auth Token:', authToken ? 'Exists' : 'Not Found');
 const client = twilio(accountSid, authToken);
 
 export default async function handler(req, res) {
+    console.log('Request received')
     if (req.method !== 'POST') {
+        console.log('Invalid Method')
         res.status(405).json({ error: 'Method not allowed' });
         return;
     }
 
     const { name, email, phone, date, time } = req.body;
+    console.log('Request body', req.body);
 
     const messageBody = `Hola ${name}, tu cita está confirmada para el ${date} a las ${time}. Gracias por elegir Reyes Auto Repair.`;
 
