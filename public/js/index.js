@@ -187,7 +187,7 @@ function loadMap() {
 }
 
 async function loadComments() {
-    const response = await fetch('http://localhost:5555/comments');
+    const response = await fetch('api/comments');
     const comments = await response.json();
     console.log(comments);
 
