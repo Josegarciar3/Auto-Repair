@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const comment = document.querySelector('#comment').value;
             const rating = document.querySelector('input[name="rating"]:checked').value;
             
-            const response = await fetch('http://localhost:5555/comments', {
+            const response = await fetch('api/comments', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

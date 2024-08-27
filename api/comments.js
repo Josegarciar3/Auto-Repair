@@ -22,8 +22,8 @@ export default async function handler(req, res) {
             const comentarios = await Comentario.find();
             res.status(200).json(comentarios);
         } catch (error) {
-            console.error('Error getting comments:', error);
-            res.status(500).json({ error: 'Error getting comments' });
+            console.error('Error getting comments:', error.message);
+            res.status(500).json({ error: 'Error getting comments', details: error.message });
         }
     } else if (req.method === 'POST') {
         const { name, comment, rating } = req.body;
@@ -33,8 +33,8 @@ export default async function handler(req, res) {
             await nuevoComentario.save();
             res.status(200).json({ success: true });
         } catch (error) {
-            console.error('Error saving comment:', error);
-            res.status(500).json({ success: false, error: 'Error saving comment' });
+            console.error('Error saving comment:', error.message);
+            res.status(500).json({ success: false, error: 'Error saving comment', details: error.message });
         }
     } else {
         res.status(405).json({ message: 'Method Not Allowed' });
