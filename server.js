@@ -10,9 +10,9 @@ const mongoose = require('mongoose');
 const app = express();
 const port = 5555;
 
-const accountSid = process.env.ACCOUNT_SID_TWILIO;
-const authToken = process.env.AUTH_TOKEN_TWILIO;
-const client = twilio(accountSid, authToken);
+// const accountSid = process.env.ACCOUNT_SID_TWILIO;
+// const authToken = process.env.AUTH_TOKEN_TWILIO;
+// const client = twilio(accountSid, authToken);
 
 const mongoUri = "mongodb+srv://reyesrepair:zkRvNE4niv9t8CAE@comments.8sa4ozf.mongodb.net/?retryWrites=true&w=majority&appName=Comments";
 
