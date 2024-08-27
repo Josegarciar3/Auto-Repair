@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
             
             form.reset();
 
+            console.log(`Enviando solicitud a /api/send-message ${name}, ${phone}, ${date}, ${time}`);
+
             fetch('/api/send-message', {
                 method: 'POST',
                 headers: {
