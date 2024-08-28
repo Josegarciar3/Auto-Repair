@@ -141,7 +141,7 @@ function cerrarModal() {
 }
 
 function initMap() {
-    fetch('http://localhost:5555/api-key')
+    fetch('/api/location.js')
         .then(response => response.text())
         .then(text => {
             console.log('Respuesta del servidor:', text);
