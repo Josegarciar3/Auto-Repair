@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const freeEstimateButton = document.querySelector('#free-bttn');
     if(freeEstimateButton){
         freeEstimateButton.addEventListener('click', function(){
-            window.location.href = '../public/appointments.html';
+            window.location.href = '/appointments.html';
         });
     }
 
