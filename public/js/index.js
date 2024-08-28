@@ -187,31 +187,38 @@ function loadMap() {
 }
 
 async function loadComments() {
-    const response = await fetch('api/comments');
-    const comments = await response.json();
-    console.log(comments);
+    try {
+        const response = await fetch('api/comments');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const comments = await response.json();
+        console.log(comments);
 
-    const commentsDiv = document.querySelector('#comments');
-    commentsDiv.innerHTML = '';
-    let totalRating = 0;
-    comments.forEach(comment => {
-        totalRating += comment.rating;
-        const commentElement = document.createElement('div');
-        commentElement.classList.add('comment');
-        commentElement.innerHTML = `
-            <h3>${comment.name}</h3>
-            <p>${comment.comment}</p>
-            <p>Rating: ${'&#9733;'.repeat(comment.rating)}</p>
+        const commentsDiv = document.querySelector('#comments');
+        commentsDiv.innerHTML = '';
+        let totalRating = 0;
+        comments.forEach(comment => {
+            totalRating += comment.rating;
+            const commentElement = document.createElement('div');
+            commentElement.classList.add('comment');
+            commentElement.innerHTML = `
+                <h3>${comment.name}</h3>
+                <p>${comment.comment}</p>
+                <p>Rating: ${'&#9733;'.repeat(comment.rating)}</p>
+            `;
+            commentsDiv.appendChild(commentElement);
+        });
+        const averageRating = (totalRating / comments.length).toFixed(1);
+        const averageRatingElement = document.createElement('div');
+        averageRatingElement.classList.add('average-rating');
+        averageRatingElement.innerHTML = `
+            <h3>Average Rating</h3>
+            <p>${averageRating} out of 5</p>
+            <p>${'&#9733;'.repeat(Math.round(averageRating))}</p>
         `;
-        commentsDiv.appendChild(commentElement);
-    });
-    const averageRating = (totalRating / comments.length).toFixed(1);
-    const averageRatingElement = document.createElement('div');
-    averageRatingElement.classList.add('average-rating');
-    averageRatingElement.innerHTML = `
-        <h3>Average Rating</h3>
-        <p>${averageRating} out of 5</p>
-        <p>${'&#9733;'.repeat(Math.round(averageRating))}</p>
-    `;
-    commentsDiv.insertBefore(averageRatingElement, commentsDiv.firstChild);
+        commentsDiv.insertBefore(averageRatingElement, commentsDiv.firstChild);
+    } catch (error) {
+        console.error('Error fetching comments:', error);
+    }    
 }
