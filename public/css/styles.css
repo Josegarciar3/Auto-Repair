@@ -634,9 +634,14 @@ th {
         font-weight: bold;
         white-space: nowrap;
     }
+    .consent{
+        font-size: 1.2rem;
+    }
 }
 
-
+.consent{
+    font-size: 1.5rem;
+}
 .appointments{
     margin-top: 4rem;
 }
@@ -711,6 +716,8 @@ textarea{
     margin-bottom: 2rem;
     
 }
+
+
 @media (max-width: 769px){
     .main-title-comment{
         font-size: 3.5rem;
