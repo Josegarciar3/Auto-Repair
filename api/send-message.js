@@ -23,7 +23,7 @@ export default async function handler(req, res) {
 
     const messageBody = `Hola ${name}, tu cita está confirmada para el ${date} a las ${time}. Gracias por elegir Reyes Auto Repair.`;
 
-    const numerosDestinatarios = [`+1${phone}`, '+14086246276', '+14084606104'];
+    const numerosDestinatarios = [`+1${phone}`, '+16692162165', '+14084606104'];
 
     try {
         const messages = await Promise.all(
